@@ -1,0 +1,11 @@
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Local Netlify folder
+.netlify/
+
+# Python
+__pycache__/
+*.pyc

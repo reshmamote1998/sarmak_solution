@@ -1,0 +1,8 @@
+{
+  "name": "sarmak-workshop-netlify",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8800",
+    "build": "echo 'Static site ready for Netlify deployment'"
+  }
+}

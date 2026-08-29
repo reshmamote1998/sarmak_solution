@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checking Payment Status</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Checking your payment...</h2>
+
+    <p>Please wait. Do not close this page.</p>
+
+    <script>
+        // Get order ID from URL
+        const params = new URLSearchParams(window.location.search);
+        const orderId = params.get("order_id");
+
+        if (!orderId) {
+            // No order ID found
+            window.location.href = "/payment-failed.html";
+        } else {
+
+            // Call Netlify function to check payment
+            fetch(`/.netlify/functions/check-payment?order_id=${orderId}`)
+                .then(response => response.json())
+                .then(data => {
+
+                    console.log("Payment Status:", data);
+
+                    // If payment is successful
+                    if (data.payment_status === "PAID") {
+
+                        window.location.href =
+                            "/payment_success.html?order_id=" + orderId;
+
+                    } else {
+
+                        // Payment failed, cancelled, or pending
+                        window.location.href =
+                            "/payment-failed.html?order_id=" + orderId;
+                    }
+
+                })
+                .catch(error => {
+
+                    console.error("Error checking payment:", error);
+
+                    window.location.href =
+                        "/payment-failed.html?order_id=" + orderId;
+                });
+        }
+    </script>
+
+</body>
+</html>

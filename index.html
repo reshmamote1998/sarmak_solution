@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SARMAK| Worried to Hired Workshop</title>
+
+
+    <link rel="stylesheet"
+          href="./style.css">
+
+
+    <!-- International Phone Input CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <img
+                src="./logo.png"
+                alt="SARMAK Logo"
+                class="logo"
+            >
+
+            <div class="brand-text">
+
+                <h1>SARMAK</h1>
+
+                <p>
+                    INNOVATE. TRANSFORM. EXCEL.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="live-badge">
+            LIVE ONLINE WORKSHOP
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="landing">
+
+
+        <!-- ========== LEFT SIDE ========== -->
+
+        <section class="left-section">
+
+
+            <div class="small-title">
+                From Worried to Hired
+            </div>
+
+
+            <h2 class="main-title">
+                WORKSHOP
+            </h2>
+
+
+            <p class="description">
+                Build 5 in 1 Smart Journey. Save Time. Scale Business.
+            </p>
+
+
+            <div class="gold-line"></div>
+
+
+            <h3 class="register-title">
+                REGISTER NOW
+            </h3>
+
+
+            <p class="limited">
+                Limited Seats Available!
+            </p>
+
+
+
+            <!-- ================= FORM ================= -->
+
+            <form id="registration-form">
+
+
+                <!-- NAME -->
+
+                <label for="name">
+                    Name <span>*</span>
+                </label>
+
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+
+                <!-- EMAIL -->
+
+                <label for="email">
+                    Email <span>*</span>
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+
+
+                <!-- WHATSAPP -->
+
+                <label for="phone">
+                    WhatsApp Number <span>*</span>
+                </label>
+
+
+                <div class="phone-box">
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your WhatsApp number"
+                        autocomplete="tel"
+                        inputmode="numeric"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PHONE ERROR -->
+
+                <div
+                    id="phone-error"
+                    class="phone-error">
+                </div>
+
+
+
+                <!-- HIDDEN COUNTRY CODE -->
+
+                <input
+                    type="hidden"
+                    name="country_code"
+                    id="country_code"
+                >
+
+
+                <!-- HIDDEN FULL PHONE -->
+
+                <input
+                    type="hidden"
+                    name="full_phone"
+                    id="full_phone"
+                >
+
+
+
+                <!-- PAYMENT BUTTON -->
+
+                <button
+                    type="submit"
+                    id="pay-button"
+                    class="pay-button">
+
+                    REGISTER NOW — ₹9
+
+                </button>
+
+
+            </form>
+
+
+
+            <div class="secure">
+                🔒 Secure Payment &nbsp; | &nbsp; Instant Confirmation
+            </div>
+
+
+
+            <!-- ================= WORKSHOP DETAILS ================= -->
+
+            <div class="workshop-details">
+
+
+                <div class="detail-item">
+
+                    <span class="detail-icon">
+                        📅
+                    </span>
+
+                    <div>
+
+                        <strong>Date</strong>
+
+                        <p>
+                            30 August 2026
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="detail-item">
+
+                    <span class="detail-icon">
+                        ⏰
+                    </span>
+
+                    <div>
+
+                        <strong>Time</strong>
+
+                        <p>
+                            7:00 PM – 9:00 PM
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="detail-item">
+
+                    <span class="detail-icon">
+                        💻
+                    </span>
+
+                    <div>
+
+                        <strong>Mode</strong>
+
+                        <p>
+                            Online
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ========== RIGHT SIDE ========== -->
+
+        <section class="right-section">
+
+
+            <div class="poster-card">
+
+                <img
+                    src="./poster.jpg"
+                    alt="AI Automation Workshop Poster"
+                    class="poster"
+                >
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!-- CASHFREE JS SDK -->
+<!-- ================================================= -->
+
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+
+
+
+<!-- ================================================= -->
+<!-- INTERNATIONAL PHONE INPUT -->
+<!-- ================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* ==========================================
+           GET ELEMENTS
+        ========================================== */
+
+        const phoneInput =
+            document.getElementById("phone");
+
+
+        const phoneError =
+            document.getElementById("phone-error");
+
+
+        const phoneBox =
+            document.querySelector(".phone-box");
+
+
+        const form =
+            document.getElementById(
+                "registration-form"
+            );
+
+
+        const payButton =
+            document.getElementById(
+                "pay-button"
+            );
+
+
+
+        /* ==========================================
+           INITIALIZE INTERNATIONAL PHONE INPUT
+        ========================================== */
+
+        const iti =
+            window.intlTelInput(
+                phoneInput,
+                {
+
+                    initialCountry: "in",
+
+                    separateDialCode: true,
+
+                    nationalMode: true,
+
+                    allowDropdown: true,
+
+                    showFlags: true,
+
+                    preferredCountries: [
+                        "in",
+                        "us",
+                        "gb",
+                        "ae",
+                        "ca",
+                        "au"
+                    ]
+
+                }
+            );
+
+
+
+        /* ==========================================
+           GET MAXIMUM DIGITS
+        ========================================== */
+
+        function getMaxDigits() {
+
+
+            const country =
+                iti
+                    .getSelectedCountryData()
+                    .iso2;
+
+
+            /* --------------------------------------
+               INDIA
+            -------------------------------------- */
+
+            if (country === "in") {
+
+                return 10;
+
+            }
+
+
+            /* --------------------------------------
+               INTERNATIONAL
+            -------------------------------------- */
+
+            return 15;
+
+        }
+
+
+
+        /* ==========================================
+           SHOW PHONE ERROR
+        ========================================== */
+
+        function showPhoneError(message) {
+
+
+            phoneError.textContent =
+                "❌ " + message;
+
+
+            phoneError.style.display =
+                "block";
+
+
+            phoneBox.classList.add(
+                "phone-invalid"
+            );
+
+        }
+
+
+
+        /* ==========================================
+           CLEAR PHONE ERROR
+        ========================================== */
+
+        function clearPhoneError() {
+
+
+            phoneError.textContent =
+                "";
+
+
+            phoneError.style.display =
+                "none";
+
+
+            phoneBox.classList.remove(
+                "phone-invalid"
+            );
+
+        }
+
+
+
+        /* ==========================================
+           PHONE INPUT RESTRICTION
+        ========================================== */
+
+        phoneInput.addEventListener(
+            "input",
+            function () {
+
+
+                /* ----------------------------------
+                   ONLY NUMBERS
+                ---------------------------------- */
+
+                this.value =
+                    this.value.replace(
+                        /[^0-9]/g,
+                        ""
+                    );
+
+
+                /* ----------------------------------
+                   GET MAXIMUM DIGITS
+                ---------------------------------- */
+
+                const maxDigits =
+                    getMaxDigits();
+
+
+                /* ----------------------------------
+                   STOP EXTRA DIGITS
+                ---------------------------------- */
+
+                if (
+                    this.value.length >
+                    maxDigits
+                ) {
+
+                    this.value =
+                        this.value.substring(
+                            0,
+                            maxDigits
+                        );
+
+                }
+
+
+                clearPhoneError();
+
+            }
+        );
+
+
+
+        /* ==========================================
+           COUNTRY CHANGE
+        ========================================== */
+
+        phoneInput.addEventListener(
+            "countrychange",
+            function () {
+
+
+                const maxDigits =
+                    getMaxDigits();
+
+
+                /* ----------------------------------
+                   CUT EXTRA DIGITS IF REQUIRED
+                ---------------------------------- */
+
+                if (
+                    phoneInput.value.length >
+                    maxDigits
+                ) {
+
+                    phoneInput.value =
+                        phoneInput.value.substring(
+                            0,
+                            maxDigits
+                        );
+
+                }
+
+
+                clearPhoneError();
+
+            }
+        );
+
+
+
+        /* ==========================================
+           VALIDATE PHONE
+        ========================================== */
+
+        function validatePhone() {
+
+
+            const number =
+                phoneInput.value.trim();
+
+
+            const country =
+                iti
+                    .getSelectedCountryData()
+                    .iso2;
+
+
+
+            /* ======================================
+               EMPTY
+            ====================================== */
+
+            if (number === "") {
+
+                showPhoneError(
+                    "WhatsApp number is required."
+                );
+
+                return false;
+
+            }
+
+
+
+            /* ======================================
+               NUMBERS ONLY
+            ====================================== */
+
+            if (
+                !/^[0-9]+$/.test(number)
+            ) {
+
+                showPhoneError(
+                    "Please enter numbers only."
+                );
+
+                return false;
+
+            }
+
+
+
+            /* ======================================
+               INDIA
+            ====================================== */
+
+            if (country === "in") {
+
+
+                /* EXACTLY 10 DIGITS */
+
+                if (
+                    number.length !== 10
+                ) {
+
+                    showPhoneError(
+                        "India WhatsApp number must contain exactly 10 digits."
+                    );
+
+                    return false;
+
+                }
+
+
+                /* START WITH 6-9 */
+
+                if (
+                    !/^[6-9][0-9]{9}$/.test(
+                        number
+                    )
+                ) {
+
+                    showPhoneError(
+                        "Please enter a valid 10-digit Indian mobile number."
+                    );
+
+                    return false;
+
+                }
+
+
+                clearPhoneError();
+
+                return true;
+
+            }
+
+
+
+            /* ======================================
+               INTERNATIONAL
+            ====================================== */
+
+            if (
+                number.length < 6 ||
+                number.length > 15
+            ) {
+
+                showPhoneError(
+                    "Please enter a valid international phone number."
+                );
+
+                return false;
+
+            }
+
+
+            clearPhoneError();
+
+            return true;
+
+        }
+
+
+
+        /* ==========================================
+           FORM SUBMIT
+        ========================================== */
+
+        form.addEventListener(
+            "submit",
+            async function (event) {
+
+
+                /* ----------------------------------
+                   STOP NORMAL FORM SUBMISSION
+                ---------------------------------- */
+
+                event.preventDefault();
+
+
+
+                /* ----------------------------------
+                   VALIDATE PHONE
+                ---------------------------------- */
+
+                if (
+                    !validatePhone()
+                ) {
+
+                    phoneInput.focus();
+
+                    return;
+
+                }
+
+
+
+                /* ==================================
+                   COUNTRY CODE
+                ================================== */
+
+                const countryCode =
+                    "+" +
+                    iti
+                        .getSelectedCountryData()
+                        .dialCode;
+
+
+                document.getElementById(
+                    "country_code"
+                ).value =
+                    countryCode;
+
+
+
+                /* ==================================
+                   FULL PHONE NUMBER
+                ================================== */
+
+                const fullPhone =
+                    countryCode +
+                    phoneInput.value;
+
+
+                document.getElementById(
+                    "full_phone"
+                ).value =
+                    fullPhone;
+
+
+
+                /* ==================================
+                   CREATE JSON PAYLOAD
+                ================================== */
+
+                const payload = {
+                    name: document.getElementById("name").value.trim(),
+                    email: document.getElementById("email").value.trim(),
+                    phone: document.getElementById("full_phone").value.trim(),
+                    country_code: document.getElementById("country_code").value.trim()
+                };
+
+
+                /* ==================================
+                   DISABLE PAYMENT BUTTON
+                ================================== */
+
+                payButton.disabled =
+                    true;
+
+
+                payButton.innerText =
+                    "Creating Payment...";
+
+
+
+                try {
+
+
+                    /* ==================================
+                       SEND DATA TO FLASK
+                    ================================== */
+
+                    const response =
+                        await fetch(
+                            "/create-order",
+                            {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify(payload)
+                            }
+                        );
+
+
+
+                    /* ==================================
+                       READ RESPONSE
+                    ================================== */
+
+                    const result =
+                        await response.json();
+
+
+
+                    console.log(
+                        "Backend Response:",
+                        result
+                    );
+
+
+
+                    /* ==================================
+                       BACKEND ERROR
+                    ================================== */
+
+                    if (
+                        !response.ok ||
+                        !result.success
+                    ) {
+
+
+                        showPhoneError(
+                            result.error ||
+                            "Unable to create payment order."
+                        );
+
+
+                        payButton.disabled =
+                            false;
+
+
+                        payButton.innerText =
+                            "REGISTER NOW — ₹9";
+
+
+                        return;
+
+                    }
+
+
+
+                    /* ==================================
+                       GET PAYMENT SESSION
+                    ================================== */
+
+                    const paymentSessionId =
+                        result.payment_session_id;
+
+
+                    const orderId =
+                        result.order_id;
+
+
+
+                    console.log(
+                        "Cashfree Order ID:",
+                        orderId
+                    );
+
+
+                    console.log(
+                        "Payment Session ID:",
+                        paymentSessionId
+                    );
+
+
+
+                    /* ==================================
+                       CHECK PAYMENT SESSION
+                    ================================== */
+
+                    if (
+                        !paymentSessionId
+                    ) {
+
+                        throw new Error(
+                            "Payment session ID was not received from Cashfree."
+                        );
+
+                    }
+
+
+
+                    /* ==================================
+                       INITIALIZE CASHFREE
+                    ================================== */
+
+                    const cashfree =
+                        Cashfree({
+
+                            mode:
+                                result.mode ||
+                                "sandbox"
+
+                        });
+
+
+
+                    /* ==================================
+                       OPEN CASHFREE CHECKOUT
+                    ================================== */
+
+                    await cashfree.checkout(
+                        {
+
+                            paymentSessionId:
+                                paymentSessionId,
+
+                            redirectTarget:
+                                "_self"
+
+                        }
+                    );
+
+
+
+                }
+
+
+                catch (error) {
+
+
+                    console.error(
+                        "Cashfree Payment Error:",
+                        error
+                    );
+
+
+                    showPhoneError(
+                        "Unable to process payment. Please try again."
+                    );
+
+
+                    payButton.disabled =
+                        false;
+
+
+                    payButton.innerText =
+                        "REGISTER NOW — ₹9";
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+
+<!-- ================================================= -->
+<!-- PHONE ERROR STYLE -->
+<!-- ================================================= -->
+
+<style>
+
+.phone-error {
+
+    display: none;
+
+    margin-top: 6px;
+
+    margin-bottom: 10px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #d93025;
+
+}
+
+
+.phone-box.phone-invalid input {
+
+    border:
+        2px solid #d93025 !important;
+
+}
+
+
+.phone-box input {
+
+    width: 100%;
+
+}
+
+
+.pay-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+</style>
+
+
+</body>
+
+</html>
+

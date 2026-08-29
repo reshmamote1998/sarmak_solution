@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment | SARMAK </title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #111;
+
+            color:
+                #fff;
+
+            min-height:
+                100vh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+        }
+
+
+        .payment-container {
+
+            width:
+                90%;
+
+            max-width:
+                500px;
+
+            background:
+                #1c1c1c;
+
+            border-radius:
+                15px;
+
+            padding:
+                40px 30px;
+
+            text-align:
+                center;
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.4);
+
+        }
+
+
+        .logo {
+
+            width:
+                100px;
+
+            height:
+                auto;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        h1 {
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .amount {
+
+            font-size:
+                32px;
+
+            font-weight:
+                bold;
+
+            color:
+                #d4af37;
+
+            margin:
+                20px 0;
+
+        }
+
+
+        .customer-info {
+
+            margin:
+                20px 0;
+
+            line-height:
+                1.8;
+
+            color:
+                #ddd;
+
+        }
+
+
+        .pay-button {
+
+            width:
+                100%;
+
+            padding:
+                15px;
+
+            border:
+                none;
+
+            border-radius:
+                8px;
+
+            background:
+                #d4af37;
+
+            color:
+                #111;
+
+            font-size:
+                17px;
+
+            font-weight:
+                bold;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .pay-button:hover {
+
+            opacity:
+                0.9;
+
+        }
+
+
+        .secure {
+
+            margin-top:
+                20px;
+
+            font-size:
+                13px;
+
+            color:
+                #aaa;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="payment-container">
+
+
+    <img
+        src="./logo.png"
+        alt="SARMAK Logo"
+        class="logo"
+    >
+
+
+    <h1>
+        Workshop Registration
+    </h1>
+
+
+    <p>
+        WORRIES to Hired Workshop
+    </p>
+
+
+    <div class="amount">
+        ₹9
+    </div>
+
+
+    <div class="customer-info" id="customer-info">
+        <div><strong>Name:</strong> Workshop Registrant</div>
+        <div><strong>Email:</strong> registration@example.com</div>
+        <div><strong>WhatsApp:</strong> +91 00000 00000</div>
+    </div>
+
+
+    <button
+        id="pay-button"
+        class="pay-button">
+
+        Pay ₹9 Securely
+
+    </button>
+
+
+    <div class="secure">
+
+        🔒 Secure payment powered by Cashfree
+
+    </div>
+
+
+</div>
+
+
+<!-- CASHFREE SDK -->
+
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const params = new URLSearchParams(window.location.search);
+        const paymentSessionId = params.get("payment_session_id") || "";
+
+
+        const payButton =
+            document.getElementById(
+                "pay-button"
+            );
+
+
+        if (!paymentSessionId) {
+
+            payButton.disabled =
+                true;
+
+            payButton.innerText =
+                "Payment Session Missing";
+
+            return;
+
+        }
+
+
+        /* =====================================
+           INITIALIZE CASHFREE
+        ===================================== */
+
+        const cashfree =
+            Cashfree({
+                mode: "sandbox"
+            });
+
+
+        /* =====================================
+           OPEN CHECKOUT
+        ===================================== */
+
+        payButton.addEventListener(
+            "click",
+            async function () {
+
+
+                payButton.disabled =
+                    true;
+
+
+                payButton.innerText =
+                    "Opening Payment...";
+
+
+                try {
+
+                    const result =
+                        await cashfree.checkout({
+
+                            paymentSessionId:
+                                paymentSessionId,
+
+                            redirectTarget:
+                                "_self"
+
+                        });
+
+
+                    console.log(
+                        "Cashfree Checkout:",
+                        result
+                    );
+
+
+                }
+
+                catch (error) {
+
+                    console.error(
+                        "Cashfree Error:",
+                        error
+                    );
+
+
+                    payButton.disabled =
+                        false;
+
+
+                    payButton.innerText =
+                        "Pay ₹9 Securely";
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+
