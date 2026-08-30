@@ -1,3 +1,4 @@
+
 [build]
   publish = "."
   functions = "netlify/functions"
@@ -9,8 +10,16 @@
   status = 200
   force = true
 
-# Webinar page
+# Webinar - show the existing landing page
 [[redirects]]
   from = "/webinar"
-  to = "/webinar/index.html"
+  to = "/index.html"
   status = 200
+  force = true
+
+# Handle /webinar/
+[[redirects]]
+  from = "/webinar/"
+  to = "/index.html"
+  status = 200
+  force = true
