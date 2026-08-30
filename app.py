@@ -5,7 +5,8 @@ from flask import (
     request,
     jsonify,
     redirect,
-    url_for
+    url_for,
+    send_from_directory
 )
 
 import requests
@@ -42,9 +43,8 @@ CASHFREE_CLIENT_SECRET = os.getenv(
     "CASHFREE_CLIENT_SECRET"
 )
 
-
-# sandbox for testing
-# production for live payments
+# sandbox = testing
+# production = live payments
 
 CASHFREE_MODE = os.getenv(
     "CASHFREE_MODE",
@@ -70,7 +70,7 @@ else:
 
 
 # ==========================================
-# API VERSION
+# CASHFREE API VERSION
 # ==========================================
 
 CASHFREE_API_VERSION = "2025-01-01"
@@ -85,6 +85,45 @@ def home():
 
     return render_template(
         "index.html"
+    )
+
+
+# ==========================================
+# WEBINAR PAGE
+# ==========================================
+
+@app.route("/webinar")
+def webinar():
+
+    return send_from_directory(
+        "webinar",
+        "index.html"
+    )
+
+
+# ==========================================
+# WEBINAR CSS
+# ==========================================
+
+@app.route("/webinar/style.css")
+def webinar_css():
+
+    return send_from_directory(
+        "webinar",
+        "style.css"
+    )
+
+
+# ==========================================
+# WEBINAR JAVASCRIPT
+# ==========================================
+
+@app.route("/webinar/script.js")
+def webinar_js():
+
+    return send_from_directory(
+        "webinar",
+        "script.js"
     )
 
 
@@ -109,12 +148,10 @@ def create_order():
             ""
         ).strip()
 
-
         email = request.form.get(
             "email",
             ""
         ).strip()
-
 
         full_phone = request.form.get(
             "full_phone",
@@ -163,7 +200,7 @@ def create_order():
 
 
         # ----------------------------------
-        # REMOVE + FROM PHONE
+        # REMOVE + AND SPACES FROM PHONE
         # ----------------------------------
 
         customer_phone = (
@@ -184,7 +221,7 @@ def create_order():
 
 
         # ----------------------------------
-        # CASHFREE REQUEST
+        # CASHFREE REQUEST PAYLOAD
         # ----------------------------------
 
         payload = {
@@ -231,7 +268,7 @@ def create_order():
 
 
         # ----------------------------------
-        # HEADERS
+        # CASHFREE HEADERS
         # ----------------------------------
 
         headers = {
@@ -255,7 +292,7 @@ def create_order():
 
 
         # ----------------------------------
-        # CALL CASHFREE
+        # CALL CASHFREE API
         # ----------------------------------
 
         response = requests.post(
@@ -272,7 +309,7 @@ def create_order():
 
 
         # ----------------------------------
-        # DEBUG
+        # DEBUG INFORMATION
         # ----------------------------------
 
         print(
@@ -323,16 +360,20 @@ def create_order():
 
 
         # ----------------------------------
-        # GET RESPONSE
+        # GET CASHFREE RESPONSE
         # ----------------------------------
 
-        data =response.json()
+        data = response.json()
 
 
-        payment_session_id =data.get(
-                "payment_session_id"
-            )
+        payment_session_id = data.get(
+            "payment_session_id"
+        )
 
+
+        # ----------------------------------
+        # CHECK PAYMENT SESSION
+        # ----------------------------------
 
         if not payment_session_id:
 
@@ -397,8 +438,8 @@ def create_order():
 def payment_success():
 
     order_id = request.args.get(
-            "order_id"
-        )
+        "order_id"
+    )
 
 
     return render_template(
@@ -411,7 +452,7 @@ def payment_success():
 
 
 # ==========================================
-# RUN FLASK
+# RUN FLASK SERVER
 # ==========================================
 
 if __name__ == "__main__":
@@ -423,9 +464,15 @@ if __name__ == "__main__":
         lambda: webbrowser.open(url)
     ).start()
 
+
     app.run(
+
         host="127.0.0.1",
+
         port=5000,
+
         debug=True,
+
         use_reloader=False
+
     )

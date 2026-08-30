@@ -2,8 +2,15 @@
   publish = "."
   functions = "netlify/functions"
 
+# Payment function
 [[redirects]]
   from = "/create-order"
   to = "/.netlify/functions/create-order"
   status = 200
   force = true
+
+# Webinar page
+[[redirects]]
+  from = "/webinar"
+  to = "/webinar/index.html"
+  status = 200
