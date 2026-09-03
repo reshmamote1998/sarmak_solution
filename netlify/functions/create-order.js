@@ -58,6 +58,7 @@ exports.handler = async function handler(event) {
   const orderId = `SARMAK_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
   const siteOrigin = event.headers.origin || event.headers.host || "https://example.com";
   const baseUrl = siteOrigin.startsWith("http") ? siteOrigin : `https://${siteOrigin}`;
+  
 
   const orderPayload = {
     order_id: orderId,

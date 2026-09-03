@@ -254,10 +254,9 @@ def create_order():
             "order_meta": {
 
                 "return_url":
-                    request.host_url.rstrip("/")
-                    + "/payment-success"
-                    + "?order_id="
-                    + order_id
+                    "https://learn.sarmak/payment-success"
+                   + "?order_id="
+                   + order_id
 
             },
 

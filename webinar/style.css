@@ -497,8 +497,7 @@ input::placeholder {
     color: #c59426;
 
     font-size: 11px;
-
-    margin-bottom: 4px;
+ margin-bottom: 4px;
 }
 
 
@@ -637,7 +636,7 @@ footer {
 
 /* =========================================
    PAYMENT SUCCESS PAGE
-   BLACK + GOLD THEME
+   SARMAK LEARNING PORTAL THEME
 ========================================= */
 
 .payment-container {
@@ -1023,4 +1022,48 @@ footer {
     margin: 3px 0 0;
     color: #fff;
     font-size: 14px;
+}
+
+/* =========================================
+   BACK TO HOME BUTTON
+   SARMAK LEARNING PORTAL STYLE
+========================================= */
+
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 30px;
+    margin-top: 25px;
+
+    background: #f5a623 !important;
+    color: #111111 !important;
+
+    border: 1px solid #f5a623 !important;
+    border-radius: 8px;
+
+    text-decoration: none !important;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.home-button:hover {
+    background: #f5c400 !important;
+    color: #111111 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 166, 35, 0.35);
+}
+
+.home-button:active {
+    transform: translateY(0);
 }
