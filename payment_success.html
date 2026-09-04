@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<!-- saved from url=(0065)http://127.0.0.1:5500/Supriya_Reshma_Webinar/payment_success.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
 
-    
-
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Payment Successful | SARMAK </title>
+    <title>Payment Successful | SARMAK Learning Portal</title>
 
     <style>
-         .success-logo {
-    width: 120px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-}
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +16,6 @@
 
         body {
             min-height: 100vh;
-
             font-family: Arial, Helvetica, sans-serif;
 
             background:
@@ -34,17 +26,14 @@
                     #050505 80%
                 );
 
+            color: white;
+
             display: flex;
             align-items: center;
             justify-content: center;
 
-            color: white;
-
             padding: 30px;
         }
-
-
-        /* MAIN CARD */
 
         .payment-container {
             width: 100%;
@@ -53,7 +42,6 @@
             background: #111111;
 
             border: 1px solid #d4af37;
-
             border-radius: 22px;
 
             padding: 55px 50px;
@@ -65,27 +53,15 @@
                 0 25px 70px rgba(0, 0, 0, 0.75);
         }
 
-
-        /* BRAND */
-
-        .brand {
-            color: #d4af37;
-
-            font-size: 25px;
-
-            font-weight: 700;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 25px;
+        .success-logo {
+            width: 120px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
         }
-
-
-        /* GOLD LINE */
 
         .gold-line {
             width: 90px;
-
             height: 3px;
 
             background: #d4af37;
@@ -95,11 +71,7 @@
             border-radius: 10px;
         }
 
-
-        /* SUCCESS CIRCLE */
-
         .success-icon {
-
             width: 90px;
             height: 90px;
 
@@ -110,76 +82,39 @@
             border: 3px solid #d4af37;
 
             display: flex;
-
-            justify-content: center;
-
             align-items: center;
+            justify-content: center;
 
             color: #d4af37;
 
             font-size: 48px;
-
             font-weight: bold;
 
             box-shadow:
                 0 0 20px rgba(212, 175, 55, 0.25);
         }
 
-
-        /* MAIN TITLE */
-
         h1 {
-
-            font-size: 40px;
-
+            font-size: 38px;
             color: #d4af37;
-
             margin-bottom: 15px;
-
-            font-weight: 700;
         }
-
-
-        /* SUBTITLE */
 
         h2 {
-
             font-size: 24px;
-
             color: #ffffff;
-
             margin-bottom: 20px;
-
-            font-weight: 600;
         }
 
-
-        /* MESSAGE */
-
         .message {
-
             color: #cccccc;
-
             font-size: 17px;
-
             line-height: 1.7;
-
             margin-bottom: 30px;
         }
 
-
-        .message strong {
-
-            color: #ffffff;
-        }
-
-
-        /* AMOUNT BOX */
-
         .amount-box {
-
             width: 300px;
-
             max-width: 100%;
 
             margin: 0 auto 30px;
@@ -193,45 +128,84 @@
             border-radius: 12px;
         }
 
-
         .amount-title {
-
             font-size: 12px;
-
             letter-spacing: 2px;
-
             color: #999999;
-
             margin-bottom: 8px;
         }
 
-
         .amount {
-
             font-size: 36px;
-
             font-weight: bold;
-
             color: #d4af37;
         }
 
         .order-id {
             display: inline-block;
-            margin: 0 0 20px;
+
+            margin-bottom: 25px;
+
             font-size: 12px;
             letter-spacing: 1px;
+
             color: #d9d9d9;
+
             background: rgba(212, 175, 55, 0.06);
+
             border: 1px solid rgba(212, 175, 55, 0.25);
+
             border-radius: 999px;
+
             padding: 8px 12px;
         }
 
+        .technology-box {
+            margin: 30px auto;
 
-        /* HOME BUTTON */
+            padding: 25px;
+
+            border: 1px solid #d4af37;
+
+            border-radius: 12px;
+
+            max-width: 650px;
+        }
+
+        .technology {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d4af37;
+            line-height: 1.6;
+        }
+
+        .benefits {
+            text-align: left;
+
+            max-width: 550px;
+
+            margin: 20px auto;
+
+            line-height: 1.8;
+
+            color: #ddd;
+        }
+
+        .start {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 30px;
+        }
+
+        .note {
+            margin-top: 15px;
+            color: #aaa;
+            font-size: 15px;
+            line-height: 1.6;
+        }
 
         .home-button {
-
             display: inline-block;
 
             padding: 14px 38px;
@@ -247,17 +221,14 @@
             text-decoration: none;
 
             font-size: 16px;
-
             font-weight: bold;
 
-            cursor: pointer;
+            margin-top: 25px;
 
             transition: 0.3s;
         }
 
-
         .home-button:hover {
-
             background: #f1d76b;
 
             transform: translateY(-2px);
@@ -266,11 +237,7 @@
                 0 8px 20px rgba(212, 175, 55, 0.25);
         }
 
-
-        /* FOOTER */
-
         .footer {
-
             margin-top: 35px;
 
             padding-top: 20px;
@@ -284,14 +251,9 @@
             line-height: 1.6;
         }
 
-
         .footer strong {
-
             color: #d4af37;
         }
-
-
-        /* MOBILE */
 
         @media (max-width: 600px) {
 
@@ -300,199 +262,129 @@
             }
 
             .payment-container {
-
                 padding: 40px 25px;
-
             }
 
             h1 {
-
                 font-size: 30px;
-
             }
 
             h2 {
-
                 font-size: 20px;
-
             }
 
             .message {
-
                 font-size: 15px;
-
             }
 
             .amount {
-
                 font-size: 30px;
-
             }
-
         }
-
     </style>
 
 </head>
 
-
 <body>
 
+    <div class="payment-container">
 
-<div class="payment-container">
+        <!-- SARMAK LOGO -->
+        <img
+            src="/logo.png"
+            alt="SARMAK Logo"
+            class="success-logo"
+        >
 
+        <h1>SARMAK Learning Portal</h1>
 
-    <!-- BRAND -->
-   <img src="./logo.png" alt="SARMAK Logo" class="success-logo">
-<h1>SARMAK Learning Portal</h1>
-    <!-- <div class="brand">
-        SARMAK
-    </div>
+        <div class="gold-line"></div>
 
-
-    <div class="gold-line"></div>
-
-
-    <!-- SUCCESS ICON -->
-
-    <div class="success-icon">
-        ✓
-    </div>
-
-
-    <!-- SUCCESS MESSAGE -->
-
-    <h1>
-        Payment Successful!
-    </h1>
-
-
-
-
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Payment Successful - AI &amp; Technology Bootcamp</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #050505;
-            color: white;
-            text-align: center;
-        }
-
-        .success-container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 30px 20px;
-        }
-
-        .success-icon {
-            font-size: 60px;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            color: #f5a400;
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .welcome {
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        .description {
-            color: #ddd;
-            font-size: 17px;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .technology-box {
-            margin: 30px auto;
-            padding: 25px;
-            border: 1px solid #f5a400;
-            border-radius: 12px;
-            max-width: 650px;
-        }
-
-        .technology {
-            font-size: 18px;
-            font-weight: bold;
-            color: #f5a400;
-            margin-bottom: 15px;
-        }
-
-        .benefits {
-            text-align: left;
-            max-width: 550px;
-            margin: 20px auto;
-            line-height: 1.8;
-            color: #ddd;
-        }
-
-        .start {
-            font-size: 22px;
-            font-weight: bold;
-            color: #f5a400;
-            margin-top: 30px;
-        }
-
-        .note {
-            margin-top: 15px;
-            color: #aaa;
-            font-size: 15px;
-        }
-    </style>
-
-
-
-
-    <div class="success-container">
-         <div class="welcome">
-            Welcome to the AI &amp; Technology Career Bootcamp
+        <!-- SUCCESS ICON -->
+        <div class="success-icon">
+            ✓
         </div>
 
-        <!-- Payment Success -->
-       <!-- <div class="success-icon">✓</div>-->
+        <!-- SUCCESS MESSAGE -->
+        <h1>
+            Payment Successful!
+        </h1>
 
-       <!---<h>Payment Successful!</h1>-->
-        <p class="description">
+        <h2>
+            Welcome to the AI & Technology Career Bootcamp
+        </h2>
+
+        <p class="message">
             Your registration is confirmed. 🎉
             <br><br>
-            Your journey toward understanding the complete technology
-            ecosystem starts here.
+
+            Your journey toward understanding the complete
+            technology ecosystem starts here.
         </p>
 
-        <!-- Bootcamp Information -->
+        <!-- AMOUNT -->
+        <div class="amount-box">
+
+            <div class="amount-title">
+                AMOUNT PAID
+            </div>
+
+            <div class="amount">
+                ₹9
+            </div>
+
+        </div>
+
+        <!-- ORDER ID -->
+        <div
+            class="order-id"
+            id="order-id">
+            Order ID: Checking...
+        </div>
+
+        <!-- BOOTCAMP INFORMATION -->
         <div class="technology-box">
 
             <div class="technology">
-                AI → Cloud &amp; DevOps → Databases → Operating Systems → Networking
+                AI → Cloud & DevOps → Databases
+                → Operating Systems → Networking
             </div>
 
-            <p class="description">
+            <p class="message">
                 You won't just learn individual technologies —
-                you'll understand how they connect and work together
-                in the real world.
+                you'll understand how they connect and work
+                together in the real world.
             </p>
 
         </div>
 
-        <!-- What You Will Gain -->
-        <h2>What You'll Gain</h2>
+        <!-- WHAT YOU WILL GAIN -->
+        <h2>
+            What You'll Gain
+        </h2>
 
         <div class="benefits">
-            <div>✓ Understand the bigger picture of modern technology</div>
-            <div>✓ Learn how AI, Cloud and Data work together</div>
-            <div>✓ Build strong technology fundamentals</div>
-            <div>✓ Connect systems, databases and networking concepts</div>
-            <div>✓ Develop practical, industry-oriented knowledge</div>
+
+            <div>
+                ✓ Understand the bigger picture of modern technology
+            </div>
+
+            <div>
+                ✓ Learn how AI, Cloud and Data work together
+            </div>
+
+            <div>
+                ✓ Build strong technology fundamentals
+            </div>
+
+            <div>
+                ✓ Connect systems, databases and networking concepts
+            </div>
+
+            <div>
+                ✓ Develop practical, industry-oriented knowledge
+            </div>
+
         </div>
 
         <div class="start">
@@ -500,109 +392,59 @@
         </div>
 
         <div class="note">
-            Registration confirmed. More details and joining instructions
+            Registration confirmed.
+            More details and joining instructions
             will be shared with you shortly.
         </div>
 
-    </div>
+        <!-- BACK TO LEARNING PORTAL -->
+        <a
+            href="https://learn.sarmak.in"
+            class="home-button">
+            Back to Learning Portal
+        </a>
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+        <!-- FOOTER -->
+        <div class="footer">
 
+            🔒 Secure Payment
+            &nbsp; | &nbsp;
 
-   
+            <strong>SARMAK Learning Portal</strong>
 
+            <br>
 
-   
+            5 in 1 Workshop
 
-
- 
-
-    
-
-    <div class="amount-box">
-
-        <div class="amount-title">
-            AMOUNT PAID
-        </div>
-
-        <div class="amount">
-            ₹9
         </div>
 
     </div>
 
 
-    <!-- HOME BUTTON -->
+    <script>
 
-    <!-- HOME BUTTON -->
-        <!-- <a href="/" class="home-button">Back to Home</a> -->
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
 
-    <!-- FOOTER -->
+        const orderId =
+            params.get("order_id");
 
-    <div class="footer">
+        const orderEl =
+            document.getElementById("order-id");
 
-        🔒 Secure Payment &nbsp; | &nbsp;
+        if (orderEl) {
 
-        <strong>SARMAK Learning Portal </strong>
+            orderEl.textContent =
+                orderId
+                    ? `Order ID: ${orderId}`
+                    : "Order ID: N/A";
 
-        <br>
+        }
 
-        5 in 1 Workshop
+    </script>
 
-    </div>
+</body>
 
-
-</div>
-
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const orderId = params.get("order_id");
-    const orderEl = document.getElementById("order-id");
-    if (orderEl) {
-        orderEl.textContent = orderId ? `Order ID: ${orderId}` : "Order ID: N/A";
-    }
-</script>
-<!---<script>
-  setTimeout(function () {
-    window.location.href = "https://learn.sarmak.in";
-  }, 2000);
-</script>
--->
-<!-- Code injected--></body></html>
+</html>
